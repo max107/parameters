@@ -24,7 +24,11 @@ class ParametersTest extends TestCase
             'array' => [1, 2, 3],
         ]);
         $this->assertSame(123.321, $bag->getFloat('test'));
+        $this->assertSame(0.0, $bag->getFloat('test_alpha'));
+
         $this->assertSame(123, $bag->getInt('test'));
+        $this->assertSame(0, $bag->getInt('test_alpha'));
+
         $this->assertSame('123.321', $bag->get('test'));
         $this->assertSame('123321', $bag->getDigits('test'));
         $this->assertSame('qwe123', $bag->getAlnum('test_alpha'));

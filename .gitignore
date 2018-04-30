@@ -2,3 +2,5 @@
 composer.lock
 /coverage
 .DS_Store
+.idea
+*.iml

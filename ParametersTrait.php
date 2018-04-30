@@ -93,9 +93,14 @@ trait ParametersTrait
      *
      * @return null|float The filtered value
      */
-    public function getFloat(string $key, $default = false): ?float
+    public function getFloat(string $key, $default = 0.0): ?float
     {
-        return $this->filter($key, $default, FILTER_VALIDATE_FLOAT);
+        $value = $this->filter($key, $default, FILTER_VALIDATE_FLOAT);
+        if (false === is_float($value)) {
+            return $default;
+        }
+
+        return $value;
     }
 
     /**
