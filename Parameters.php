@@ -36,6 +36,14 @@ class Parameters implements \IteratorAggregate, \Countable
     /**
      * {@inheritdoc}
      */
+    public function all(): array
+    {
+        return $this->parameters;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getIterator()
     {
         return new \ArrayIterator($this->parameters);
