@@ -38,5 +38,12 @@ class ParametersTest extends TestCase
         $this->assertInstanceOf(\Iterator::class, $bag->getIterator());
         $this->assertSame(['1', '2', '3'], $bag->filter('array', []));
         $this->assertCount(5, $bag);
+        $this->assertSame([
+            'test' => '123.321',
+            'test_boolean_true' => '1',
+            'test_boolean_false' => '0',
+            'test_alpha' => 'qwe123',
+            'array' => [1, 2, 3]
+        ], $bag->all());
     }
 }
